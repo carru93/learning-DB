@@ -31,7 +31,7 @@ function query(req, callback) {
     });
 }
 
-query('SELECT * FROM cats', function(err,results, fields){
+query('SELECT * FROM cats;', function(err,results, fields){
     if(!err)
         console.log('The data are:', results);
     else
