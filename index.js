@@ -25,17 +25,14 @@ connection.connect(function (err) {
 });
 
 function query(req, callback) {
-    connection.query(req, function (err, results, fields) {
+    connection.query(req, function (err, data) {
         if (typeof(callback) === "function")
-            callback(results);
+            callback(data);
     });
 }
 
-query('SELECT * FROM cats;', function(err,results, fields){
-    if(!err)
-        console.log('The data are:', results);
-    else
-        console.log('Error in query: ', err.message);
+query('SELECT * FROM cats WHERE id = 1;', function(err, data){
+    console.log(err);
 });
 
 
