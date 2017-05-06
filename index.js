@@ -27,7 +27,7 @@ connection.connect(function (err) {
 function query(req, callback) {
     connection.query(req, function (err, data) {
         if (typeof(callback) === "function")
-            callback(data);
+            callback(err, data);
     });
 }
 
